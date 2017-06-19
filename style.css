@@ -1,4 +1,7 @@
 
+#dice-1 { top: 120px; }
+#dice-2 { top: 250px; }
+
 .final-score {
   position: absolute;
   left: 50%;
