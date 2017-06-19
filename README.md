@@ -9,5 +9,6 @@
 
 Update rules:
 
-_ A player losses his entire score when he rolls two 6 in a row. After that , it's the next player's turn
+- A player losses his entire score when he rolls two 6 in a row. After that , it's the next player's turn
+- Add an input field "Final Score", so the players can set or change their winning score during the game.
 

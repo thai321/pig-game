@@ -62,8 +62,20 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
 		// update the UI of the current player
 		document.getElementById('score-' + activePlayer).textContent = scores[activePlayer];
 
+		var input = document.querySelector('.final-score').value;
+		var winningScore;
+		
+		// check if the player enter the input
+		// Undefined, 0, null or "" are Coerced to false
+		// anythin gelse is coereced to true
+		if (input) {
+			var winningScore = input;
+		} else {
+			winningScore = 50;
+		}
+
 		//check for winning status
-		if (scores[activePlayer] >= 20) {
+		if (scores[activePlayer] >= winningScore) {
 			document.querySelector('#name-' + activePlayer).textContent = "Winner!";
 			document.querySelector('.dice').style.display = 'none';
 			document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
@@ -81,7 +93,7 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
 
 
 function nextPlayer() {
-		document.querySelector('.player-' + activePlayer +  '-panel').classList.toggle('active');
+	document.querySelector('.player-' + activePlayer +  '-panel').classList.toggle('active');
 
 		// switch player and set roundScore to 0
 		activePlayer = (activePlayer === 0) ? 1 : 0;
@@ -96,7 +108,7 @@ function nextPlayer() {
 
 		//set hide the dice pic
 		document.querySelector('.dice').style.display = 'none';
-}
+	}
 
-document.querySelector('.btn-new').addEventListener('click', init );
+	document.querySelector('.btn-new').addEventListener('click', init );
 
